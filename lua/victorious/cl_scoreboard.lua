@@ -555,8 +555,11 @@ hook.Add("ScoreboardHide", "VictoriousScoreHide", function() if scoreboard then 
 
 hook.Add("OnParkour", "ScoreboardBeatrunXP", function()
 	local lvl = LocalPlayer():GetLevel()
+	local steamId = LocalPlayer():SteamID64()
 
-	LEVELS[LocalPlayer():SteamID64()] = tostring(lvl)
+	if (LEVELS[steamId] and LEVELS[steamId] == lvl) then return end
+
+	LEVELS[steamId] = tostring(lvl)
 
 	net.Start("Scoreboard_SendLevel")
 		net.WriteString(lvl)
