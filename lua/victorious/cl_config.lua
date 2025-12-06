@@ -2,12 +2,6 @@ VictoriousScoreboardConfig = VictoriousScoreboardConfig or {}
 
 VictoriousScoreboardConfig.servertitle = "Beatrun Community Server"
 
-VictoriousScoreboardConfig.UsingDarkRP = false
-
-VictoriousScoreboardConfig.UsingDarkRPCategories = false
-
-VictoriousScoreboardConfig.UsingDarkRPCategoriesTitles = false
-
 -- this could be "ulx", "fadmin" or "serverguard". Ask Admiration to add more(or ask any lua dev to edit settings in the end of this file)
 VictoriousScoreboardConfig.DefaultAdminMod = "ulx"
 
@@ -19,7 +13,7 @@ VictoriousScoreboardConfig.showngroups["admin"] = {ShownName = "Admin", GroupCol
 VictoriousScoreboardConfig.showngroups["user"] = {ShownName = "User", GroupColor = Color(0, 230, 255)}
 
 -- GROUPS WHO HAVE THE STAR ICON
-VictoriousScoreboardConfig.commandgroups = {"superadmin"}
+VictoriousScoreboardConfig.commandgroups = {"superadmin", "admin"}
 
 -- MAXIMUM LETTERS OF USER NAME
 VictoriousScoreboardConfig.namemax = 18
@@ -45,18 +39,12 @@ VictoriousScoreboardConfig.pingcol1 = Color(255, 100, 0)
 -- TRANSLATIONS
 
 VictoriousScoreboardConfig.KickText = "Kick"
-
 VictoriousScoreboardConfig.GotoText = "Goto"
-
 VictoriousScoreboardConfig.TeleportText = "TP"
-
 VictoriousScoreboardConfig.ReturnText = "Return"
-
 VictoriousScoreboardConfig.JailText = "Jail"
-
 VictoriousScoreboardConfig.BanText = "Ban"
-
-VictoriousScoreboardConfig.CopySteamIDText = "Copy SteamID %s (%s)"
+VictoriousScoreboardConfig.CopySteamIDText = "Copy SteamID of %s (%s)"
 
 VictoriousScoreboardConfig.NameText = "Player"
 VictoriousScoreboardConfig.RankText = "Rank"
