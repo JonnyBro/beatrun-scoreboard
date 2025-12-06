@@ -7,6 +7,7 @@ hook.Add("Initialize", "RemoveGamemodeFunctions", function()
 end)
 
 local scoreboard
+LEVELS = {}
 
 local function DrawBlurRect(x, y, w, h, amount, density)
 	surface.SetDrawColor(255, 255, 255)
@@ -540,18 +541,6 @@ hook.Add("ScoreboardShow", "VictoriousScoreShow", function()
 	hook.Remove("ScoreboardHide", "FAdmin_scoreboard")
 	hook.Remove("ScoreboardShow", "FAdmin_scoreboard")
 
-	if not LEVELS or table.IsEmpty(LEVELS) then
-		LEVELS = {}
-		LEVELS[LocalPlayer():SteamID64()] = tostring(LocalPlayer():GetLevel())
-	end
-
-	local level = LocalPlayer():GetLevel()
-
-	net.Start("SendLevel")
-		net.WriteString(tostring(level))
-		net.SendToServer()
-	net.Receive("GetLevels", function(len, _) LEVELS = net.ReadTable() end)
-
 	if scoreboard then
 		scoreboard:Update()
 		scoreboard:SetVisible(true)
@@ -563,3 +552,21 @@ hook.Add("ScoreboardShow", "VictoriousScoreShow", function()
 end)
 
 hook.Add("ScoreboardHide", "VictoriousScoreHide", function() if scoreboard then scoreboard:AlphaTo(0, 0.1, 0, function() scoreboard:SetVisible(false) end) end end)
+
+hook.Add("OnParkour", "ScoreboardBeatrunXP", function()
+	local lvl = LocalPlayer():GetLevel()
+
+	LEVELS[LocalPlayer():SteamID64()] = tostring(lvl)
+
+	net.Start("Scoreboard_SendLevel")
+		net.WriteString(lvl)
+	net.SendToServer()
+end)
+
+net.Receive("Scoreboard_GetLevels", function()
+	local levels = net.ReadTable()
+
+	for ply, lvl in ipairs(levels) do
+		LEVELS[ply] = lvl
+	end
+end)
