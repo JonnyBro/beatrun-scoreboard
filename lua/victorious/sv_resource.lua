@@ -1,4 +1,3 @@
-resource.AddFile("resource/fonts/x14y24pxHeadUpDaisy.ttf")
 resource.AddFile("materials/icons/fullping.png")
 resource.AddFile("materials/icons/3bar.png")
 resource.AddFile("materials/icons/2bar.png")
@@ -12,3 +11,5 @@ resource.AddFile("materials/icons/teleport.png")
 resource.AddFile("materials/icons/ban.png")
 resource.AddFile("materials/icons/jail.png")
 resource.AddFile("materials/icons/return.png")
+
+resource.AddFile("resource/fonts/x14y24pxHeadUpDaisy.ttf")

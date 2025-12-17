@@ -8,8 +8,8 @@ VictoriousScoreboardConfig.DefaultAdminMod = "ulx"
 -- SHOWN RANKS
 VictoriousScoreboardConfig.showngroups = {}
 VictoriousScoreboardConfig.showngroups["superadmin"] = {ShownName = "Super Admin", GroupColor = Color(255, 0, 0)}
-VictoriousScoreboardConfig.showngroups["exclusive"] = {ShownName = "Exclusive", GroupColor = Color(255, 111, 0)}
 VictoriousScoreboardConfig.showngroups["admin"] = {ShownName = "Admin", GroupColor = Color(94, 255, 110)}
+VictoriousScoreboardConfig.showngroups["vip"] = {ShownName = "VIP", GroupColor = Color(218, 206, 45)}
 VictoriousScoreboardConfig.showngroups["user"] = {ShownName = "User", GroupColor = Color(0, 230, 255)}
 
 -- GROUPS WHO HAVE THE STAR ICON
