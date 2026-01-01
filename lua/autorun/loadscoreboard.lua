@@ -1,5 +1,5 @@
 local function includeFile(fileName)
-	local fullPath = "victorious/" .. fileName
+	local fullPath = "scoreboard/" .. fileName
 	local loadType = string.Left(string.lower(fileName), 3)
 
 	if loadType == "sh_" then
