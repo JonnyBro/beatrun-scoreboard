@@ -68,6 +68,24 @@ surface.CreateFont("title", {
 	size = 72
 })
 
+surface.CreateFont("subtitle", {
+	shadow = true,
+	blursize = 0,
+	underline = false,
+	rotary = false,
+	strikeout = false,
+	additive = false,
+	antialias = false,
+	extended = false,
+	scanlines = 2,
+	font = "x14y24pxHeadUpDaisy",
+	italic = false,
+	outline = false,
+	symbol = false,
+	weight = 500,
+	size = 24
+})
+
 surface.CreateFont("score", {
 	font = "x14y24pxHeadUpDaisy",
 	size = 20,

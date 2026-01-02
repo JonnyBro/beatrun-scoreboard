@@ -189,13 +189,14 @@ if CLIENT then
 			surface.DrawRect(0, 0, w, h)
 
 			draw.SimpleText(conf.servertitle, "title", w / 2, 100, conf.servertitlc, TEXT_ALIGN_CENTER, TEXT_ALIGN_CENTER)
+			draw.SimpleText(string.format("Players: %i/%i", player.GetCount(), game.MaxPlayers()), "subtitle", w / 2, 150, conf.servertitlc, TEXT_ALIGN_CENTER, TEXT_ALIGN_CENTER)
 
 			surface.SetDrawColor(conf.white)
 			surface.DrawRect(w / 2 - 500, 202, 1000, 2)
 
 			draw.SimpleText(conf.NameText, "score", w / 2 - 457, 185, conf.white, TEXT_ALIGN_LEFT, TEXT_ALIGN_CENTER)
 
-			if conf.ShowRank then draw.SimpleText(conf.RankText, "score", w / 2 + 70, 185, conf.white, TEXT_ALIGN_LEFT, TEXT_ALIGN_CENTER) end
+			draw.SimpleText(conf.RankText, "score", w / 2 - 70, 185, conf.white, TEXT_ALIGN_LEFT, TEXT_ALIGN_CENTER)
 
 			draw.SimpleText(conf.Levels, "score", w / 2 + 278, 185, conf.white, TEXT_ALIGN_LEFT, TEXT_ALIGN_CENTER)
 			draw.SimpleText(conf.Ping, "score", w / 2 + 385, 185, conf.white, TEXT_ALIGN_LEFT, TEXT_ALIGN_CENTER)
