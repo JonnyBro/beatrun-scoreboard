@@ -154,6 +154,8 @@ if CLIENT then
 		mutebutton:SetText("")
 
 		mutebutton.Paint = function(self, w, h)
+			if not IsValid(ply) then return end
+
 			local muted = ply:IsMuted()
 			local col = muted and Color(255, 80, 80) or Color(255, 255, 255)
 			local icon = muted and conf.muted or conf.unmuted
@@ -164,6 +166,8 @@ if CLIENT then
 		end
 
 		mutebutton.DoClick = function()
+			if not IsValid(ply) then return end
+
 			ply:SetMuted(not ply:IsMuted())
 			surface.PlaySound("buttons/button9.wav")
 		end
