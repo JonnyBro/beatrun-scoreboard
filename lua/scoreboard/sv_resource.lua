@@ -6,4 +6,4 @@ resource.AddFile("materials/icons/group.png")
 resource.AddFile("materials/icons/voice-off.png")
 resource.AddFile("materials/icons/voice-on.png")
 
-resource.AddFile("resource/fonts/x14y24pxHeadUpDaisy.ttf")
+resource.AddFile("resource/fonts/headupdaisy.ttf")
