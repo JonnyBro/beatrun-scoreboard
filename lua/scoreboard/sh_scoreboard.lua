@@ -295,7 +295,7 @@ if SERVER then
 	util.AddNetworkString("Scoreboard_SendLevel")
 	util.AddNetworkString("Scoreboard_ReceiveLevels")
 
-	net.Receive("Scoreboard_SendLevel", function(len, ply)
+	net.Receive("Scoreboard_SendLevel", function(_, ply)
 		local level = net.ReadString()
 
 		LVLS[ply:SteamID64()] = tonumber(level)

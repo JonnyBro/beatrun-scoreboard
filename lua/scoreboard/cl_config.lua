@@ -8,6 +8,7 @@ conf.showngroups = {}
 conf.showngroups["superadmin"] = {ShownName = "Super Admin", GroupColor = Color(255, 0, 0)}
 conf.showngroups["admin"] = {ShownName = "Admin", GroupColor = Color(94, 255, 110)}
 conf.showngroups["vip"] = {ShownName = "VIP", GroupColor = Color(218, 206, 45)}
+conf.showngroups["mostjobless"] = {ShownName = "No J*b", GroupColor = Color(45, 218, 166)}
 conf.showngroups["user"] = {ShownName = "User", GroupColor = Color(0, 230, 255)}
 
 -- GROUPS WHO HAVE THE STAR ICON
