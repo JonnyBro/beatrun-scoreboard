@@ -1,6 +1,4 @@
 if CLIENT then
-	local LVLS = {}
-
 	hook.Remove("ScoreboardHide", "FAdmin_scoreboard")
 	hook.Remove("ScoreboardShow", "FAdmin_scoreboard")
 
@@ -110,7 +108,7 @@ if CLIENT then
 
 			local ping = ply:Ping()
 
-			draw.SimpleText(LVLS[ply:SteamID64()] or 0, "player", 1107, h / 2, conf.white, TEXT_ALIGN_CENTER, TEXT_ALIGN_CENTER)
+			draw.SimpleText(ply:GetLevel() or "Unknown", "player", 1107, h / 2, conf.white, TEXT_ALIGN_CENTER, TEXT_ALIGN_CENTER)
 			draw.SimpleText(ping, "player", 1215, h / 2, conf.white, TEXT_ALIGN_RIGHT, TEXT_ALIGN_CENTER)
 
 			surface.SetDrawColor(200, 200, 200, 20)
@@ -267,41 +265,5 @@ if CLIENT then
 				scoreboard:SetVisible(false)
 			end)
 		end
-	end)
-
-	hook.Add("OnParkour", "ScoreboardBeatrunXP", function()
-		local lvl = LocalPlayer():GetLevel()
-		local steamId = LocalPlayer():SteamID64()
-
-		if (LVLS[steamId] and tonumber(LVLS[steamId]) == tonumber(lvl)) then return end
-
-		LVLS[steamId] = tonumber(lvl)
-
-		net.Start("Scoreboard_SendLevel")
-			net.WriteString(lvl)
-		net.SendToServer()
-	end)
-
-	net.Receive("Scoreboard_ReceiveLevels", function()
-		local levelsServer = net.ReadTable()
-
-		LVLS = levelsServer
-	end)
-end
-
-if SERVER then
-	local LVLS = {}
-
-	util.AddNetworkString("Scoreboard_SendLevel")
-	util.AddNetworkString("Scoreboard_ReceiveLevels")
-
-	net.Receive("Scoreboard_SendLevel", function(_, ply)
-		local level = net.ReadString()
-
-		LVLS[ply:SteamID64()] = tonumber(level)
-
-		net.Start("Scoreboard_ReceiveLevels")
-			net.WriteTable(LVLS)
-		net.Broadcast()
 	end)
 end
