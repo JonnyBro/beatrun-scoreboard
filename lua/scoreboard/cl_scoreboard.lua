@@ -236,7 +236,7 @@ local function AddVolumeSlider(menu, ply)
 
 	local slider = BeatrunUI.MakeSlider(panel)
 	slider:Dock(FILL)
-	slider:SetMinMax(0, 150)
+	slider:SetMinMax(0, 100)
 	slider:SetDecimals(0)
 	slider:SetValue(math.Round(ply:GetVoiceVolumeScale() * 100))
 	slider.OnValueChanged = function(_, value)
