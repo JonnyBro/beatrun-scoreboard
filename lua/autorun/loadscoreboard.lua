@@ -15,5 +15,5 @@ local function includeFile(fileName)
 end
 
 includeFile("cl_config.lua")
-includeFile("sh_scoreboard.lua")
+includeFile("cl_scoreboard.lua")
 includeFile("sv_resource.lua")
